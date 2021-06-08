@@ -3,14 +3,11 @@ import 'vsjone.dart';
 import 'vsjtwo.dart';
 
 void main() {
-   MaterialApp(
-
+  runApp(MaterialApp(
     initialRoute: '/',
     routes: {
-        '/': (context) => VsjOne(),
-      // When navigating to the "/second" route, build the SecondScreen widget.
+      '/': (context) => VsjOne(),
       '/second': (context) => VsjTwo(),
     },
-  );
+  ));
 }
-
