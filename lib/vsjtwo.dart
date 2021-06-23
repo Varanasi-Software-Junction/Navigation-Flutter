@@ -52,6 +52,14 @@ controller.addListener(() {
             ),
           ),
           Text(data),
+          Image(image: NetworkImage(Utilities.imagepath),height: controller.value,),
+          RaisedButton(onPressed: () {
+            controller.reset();
+            controller.forward();
+            setState(() {
+
+            });
+          },child: Text("Animate",style: TextStyle(backgroundColor: Colors.red),),)
         ],
       ),
     );
