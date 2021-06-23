@@ -8,6 +8,7 @@ class VsjTwo extends StatefulWidget {
 }
 class _VsjTwo extends State<VsjTwo> with SingleTickerProviderStateMixin
 {
+  Animation animation;
   String data="";
   AnimationController controller;
   @override
@@ -15,7 +16,7 @@ class _VsjTwo extends State<VsjTwo> with SingleTickerProviderStateMixin
   {
     super.initState();
 controller=AnimationController(vsync: this,
-duration: Duration(seconds: 10),upperBound: 100,lowerBound: 1,
+duration: Duration(seconds: 10),
 );
 
 
@@ -52,8 +53,9 @@ controller.addListener(() {
             ),
           ),
           Text(data),
-          Image(image: NetworkImage(Utilities.imagepath),height: controller.value,),
+          Image(image: NetworkImage(Utilities.imagepath),height: controller.value*200,),
           RaisedButton(onPressed: () {
+            animation=CurvedAnimation(parent: controller, curve: Curves.decelerate);
             controller.reset();
             controller.forward();
             setState(() {
