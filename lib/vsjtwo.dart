@@ -32,7 +32,7 @@ controller.addListener(() {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
+      backgroundColor: animation.value,
       appBar: AppBar(
         title: Text("VSJ Two"),
       ),
@@ -53,9 +53,9 @@ controller.addListener(() {
             ),
           ),
           Text(data),
-          Image(image: NetworkImage(Utilities.imagepath),height: controller.value*200,),
+          Image(image: NetworkImage(Utilities.imagepath),height:200,),
           RaisedButton(onPressed: () {
-            animation=CurvedAnimation(parent: controller, curve: Curves.decelerate);
+            animation=ColorTween(begin: Colors.blue,end:Colors.red).animate(controller);
             controller.reset();
             controller.forward();
             setState(() {
