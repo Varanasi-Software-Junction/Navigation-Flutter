@@ -1,6 +1,33 @@
 import 'package:flutter/material.dart';
 import 'utilities.dart';
-class VsjTwo extends StatelessWidget {
+class VsjTwo extends StatefulWidget {
+  _VsjTwo createState() {
+    return _VsjTwo();
+  }
+
+}
+class _VsjTwo extends State<VsjTwo> with SingleTickerProviderStateMixin
+{
+  String data="";
+  AnimationController controller;
+  @override
+  void initState()
+  {
+    super.initState();
+controller=AnimationController(vsync: this,
+duration: Duration(seconds: 10),upperBound: 100,lowerBound: 1,
+);
+
+
+controller.forward();
+controller.addListener(() {
+  print(controller.value);
+  data=controller.value.toInt().toString();
+  setState(() {
+
+  });
+});
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +50,8 @@ class VsjTwo extends StatelessWidget {
               child: Image(height: 200,  image:NetworkImage(Utilities.imagepath))
               ,
             ),
-          )
+          ),
+          Text(data),
         ],
       ),
     );
