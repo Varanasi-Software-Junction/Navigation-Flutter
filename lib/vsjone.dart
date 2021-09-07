@@ -14,7 +14,7 @@ class VsjOne extends StatelessWidget {
         children: [
           Center(
             child: ElevatedButton(
-              child: Text('Go to Two'),
+              child: Text('Go to   Two'),
               onPressed: () {
     Navigator.pushNamed(context, '/second');
     }

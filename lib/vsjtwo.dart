@@ -20,15 +20,12 @@ duration: Duration(seconds: 10),
 );
 
 
-controller.forward();
-controller.addListener(() {
-  print(controller.value);
-  data=controller.value.toInt().toString();
-  setState(() {
 
-  });
-});
-  }
+
+
+
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
