@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'utilities.dart';
-import 'vsjthree.dart';
 
-class VsjTwo extends StatefulWidget {
-  _VsjTwo createState() {
-    return _VsjTwo();
+class VsjThree extends StatefulWidget {
+  _VsjThree createState() {
+    return _VsjThree();
   }
 }
 
-class _VsjTwo extends State<VsjTwo> with SingleTickerProviderStateMixin {
+class _VsjThree extends State<VsjThree> with SingleTickerProviderStateMixin {
   Animation animation;
   String data = "";
   AnimationController controller;
@@ -25,33 +24,25 @@ class _VsjTwo extends State<VsjTwo> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.teal,
       appBar: AppBar(
-        title: Text("VSJ Two"),
+        title: Text("VSJ three"),
       ),
       body: Column(
         children: [
           Center(
             child: ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context,'/three');
+                Navigator.pop(context);
               },
-              child: Text('Go to VSJ three'),
+              child: Text('Go back to VSJ two'),
             ),
-          ),
-          Center(
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context,'/');
-            },
-            child: Text('Go back to VSJ one'),
-          ),
           ),
           Hero(
             tag: 'logo',
             child: Center(
               child:
-                  Image(height: 200, image: NetworkImage(Utilities.imagepath)),
+              Image(height: 200, image: NetworkImage(Utilities.imagepath)),
             ),
           ),
           Text(data),
